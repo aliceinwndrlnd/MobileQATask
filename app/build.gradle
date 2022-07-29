@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "app.com.mobileassignment"
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '33.0.0'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:24.1.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.mockito:mockito-core:2.1.0"
+    testImplementation "org.robolectric:robolectric:4.2.1"
+
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
+
+
+    androidTestImplementation "io.qameta.allure:allure-kotlin-model:2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-android:2.4.0"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.1-alpha07'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4-alpha07'
+}
