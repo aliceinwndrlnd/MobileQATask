@@ -22,6 +22,15 @@ buildscript {
 
 apply plugin: "io.qameta.allure"
 
+allure {
+    version = '2.8.1'
+    autoconfigure = true
+    aspectjweaver = true
+    resultsDir = file('/path/to/project/module/build/allure-results')
+    aspectjweaver = true
+}
+
+
 
 allprojects {
     repositories {
