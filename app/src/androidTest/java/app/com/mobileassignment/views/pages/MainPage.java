@@ -9,7 +9,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibilit
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.AllOf.allOf;
 
 import androidx.test.espresso.ViewInteraction;
@@ -53,7 +52,6 @@ public class MainPage extends BasePage {
                 withText("")
         )));
     }
-
 
     @Step("The app is started/Checking the Cities list")
     public void checkTheCitiesList() {
