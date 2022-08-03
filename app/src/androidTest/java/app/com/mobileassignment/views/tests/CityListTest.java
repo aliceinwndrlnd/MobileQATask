@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class) //AllureAndroidJUnit4.class
+@RunWith(AndroidJUnit4.class) 
 public class CityListTest extends BaseTest {
 
     private static final String cityHoeksken = "'t Hoeksken, BE";
