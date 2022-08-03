@@ -1,4 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
 
@@ -13,23 +12,21 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.1'
         classpath "io.qameta.allure:allure-gradle:2.8.1"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
-
 apply plugin: "io.qameta.allure"
 
+
 allure {
-    version = '2.8.1'
+    version = '2.18.1'
     autoconfigure = true
     aspectjweaver = true
-    resultsDir = file('/path/to/project/module/build/allure-results')
-    aspectjweaver = true
+    resultsDir = file('.../allure-results')
+    reportDir = file('.../allure-reports')
+    clean = true
+    downloadLinkFormat = 'https://dl.bintray.com/qameta/maven/io/qameta/allure/allure-commandline/%s/allure-commandline-%<s.zip'
 }
-
 
 
 allprojects {
@@ -39,6 +36,8 @@ allprojects {
     }
 }
 
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

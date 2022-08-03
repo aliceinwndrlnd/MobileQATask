@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 33
-
     defaultConfig {
         applicationId "app.com.mobileassignment"
         minSdkVersion 19
@@ -11,7 +10,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
-        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -27,26 +26,31 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:24.1.1'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.3'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
-
-    testImplementation 'junit:junit:4.13.2'
     testImplementation "org.mockito:mockito-core:2.1.0"
-    testImplementation "org.robolectric:robolectric:4.2.1"
+    testImplementation "org.robolectric:robolectric:4.4"
 
-    androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
+    // JUnit5
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 
-
-    androidTestImplementation "io.qameta.allure:allure-kotlin-model:2.4.0"
-    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:2.4.0"
-    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:2.4.0"
-    androidTestImplementation "io.qameta.allure:allure-kotlin-android:2.4.0"
+    // Allure
+    testImplementation 'org.aspectj:aspectjweaver:1.9.5'
+    testRuntimeOnly "io.qameta.allure:allure-junit5:2.18.1"
+    testImplementation 'io.qameta.allure:allure-commandline:2.18.1'
+    testImplementation "io.qameta.allure:allure-java-commons:2.18.1"
+    testImplementation "io.qameta.allure:allure-attachments:2.18.1"
+    testImplementation "io.qameta.allure:allure-generator:2.18.1"
+    testImplementation "io.qameta.allure:allure-httpclient:2.18.1"
+    testImplementation 'io.qameta.allure:allure-assertj:2.18.1'
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test:rules:1.4.1-alpha07'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4-alpha07'
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
 }
