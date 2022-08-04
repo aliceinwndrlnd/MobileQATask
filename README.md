@@ -22,3 +22,4 @@ Automated tests for a simple native Android application that shows a list of cit
 
 ## Reports
 Reports are located in the Reports folder at the root of the project. 
+Summary can be viewed next to each test.
