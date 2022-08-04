@@ -10,7 +10,6 @@ import org.junit.Rule;
 import org.junit.runner.RunWith;
 
 import app.com.mobileassignment.views.MainActivity;
-import app.com.mobileassignment.views.pages.CitiesListPage;
 import app.com.mobileassignment.views.pages.MainPage;
 
 
@@ -19,13 +18,11 @@ public class BaseTest {
 
 
     public MainPage mainPage;
-    public CitiesListPage citiesListPage;
 
 
     @Before
     public void setUp() {
         mainPage = new MainPage();
-        citiesListPage = new CitiesListPage();
     }
 
     @Rule
