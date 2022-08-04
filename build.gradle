@@ -11,22 +11,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.1'
-        classpath "io.qameta.allure:allure-gradle:2.8.1"
     }
-}
-
-apply plugin: "io.qameta.allure"
-
-
-
-allure {
-    version = '2.18.1'
-    autoconfigure = true
-    aspectjweaver = true
-    resultsDir = file('.../allure-results')
-    reportDir = file('.../allure-reports')
-    clean = true
-    downloadLinkFormat = 'https://dl.bintray.com/qameta/maven/io/qameta/allure/allure-commandline/%s/allure-commandline-%<s.zip'
 }
 
 
