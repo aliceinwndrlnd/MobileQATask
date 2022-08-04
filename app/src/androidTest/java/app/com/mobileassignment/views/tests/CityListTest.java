@@ -1,14 +1,14 @@
 package app.com.mobileassignment.views.tests;
 
 
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
-
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Description;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class) 
+@RunWith(AllureAndroidJUnit4.class)
 public class CityListTest extends BaseTest {
 
     private static final String cityHoeksken = "'t Hoeksken, BE";
@@ -18,13 +18,13 @@ public class CityListTest extends BaseTest {
     private static final String cityName3ForTest = "A Caniza";
     private static final String symbols = "#$%^&*((*&^%$#@$%^&*()(*&^%$#$%^&*()P)(*&^%$%^&*(";
 
-    //@Description("Scroll to any City, click and check that click was performed")
+    @Description("Scroll to any City, click and check that click was performed")
     @Test
     public void scrollToAnyCity() {
         citiesListPage.scrollToRandomCity();
     }
 
-    //@Description("Checking work of Search by whole name")
+    @Description("Checking work of Search by whole name")
     @Test
     public void checkSearchingByWholeName() {
         citiesListPage
@@ -32,7 +32,7 @@ public class CityListTest extends BaseTest {
         citiesListPage.matchResult(cityHoeksken);
     }
 
-    //@Description("Checking work of Search without special symbols")
+    @Description("Checking work of Search without special symbols")
     @Test
     public void checkSearchingWithoutSpecialSymbols() {
         citiesListPage
@@ -40,21 +40,21 @@ public class CityListTest extends BaseTest {
         citiesListPage.matchResult(cityHoeksken);
     }
 
-    //@Description("Click on random city and check click was performed")
+    @Description("Click on random city and check click was performed")
     @Test
     public void clickOnAnyCity() {
         citiesListPage
                 .clickOnAnyCity();
     }
 
-    //@Description("Checking that Back button's work")
+    @Description("Checking that Back button's work")
     @Test
     public void checkBackButtonWorks() {
         citiesListPage
                 .checkBackButton();
     }
 
-    //@Description("Checking that Search field converts foreign letters")
+    @Description("Checking that Search field converts foreign letters")
     @Test
     public void checkSearchResultWithSpecialSymbols() {
         citiesListPage
@@ -62,7 +62,7 @@ public class CityListTest extends BaseTest {
         citiesListPage.matchResult(cityCaniza);
     }
 
-    //@Description("Checking that App doesn't crash after input a lot of symbols")
+    @Description("Checking that App doesn't crash after input a lot of symbols")
     @Test
     public void checkSearchingWithALotOfSymbols() {
         citiesListPage.inputData(symbols);

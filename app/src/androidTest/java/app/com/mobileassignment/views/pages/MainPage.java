@@ -1,20 +1,14 @@
 package app.com.mobileassignment.views.pages;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.isFocusable;
-import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withParent;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.core.AllOf.allOf;
-
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.matcher.ViewMatchers;
-
 import app.com.mobileassignment.R;
+import io.qameta.allure.kotlin.Step;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.*;
+import static org.hamcrest.core.AllOf.allOf;
 
 
 public class MainPage extends BasePage {
@@ -25,7 +19,7 @@ public class MainPage extends BasePage {
     private static final ViewInteraction ACTIONBAR_CONTAINER = onView(withId(R.id.action_bar_container));
 
 
-    //@Step("The app is started/Checking the header of the main screen")
+    @Step("The app is started/Checking the header of the main screen")
     public void checkTheAppsTitle() {
         ViewInteraction textView = onView(
                 allOf(withText("Mobile Assignment"),
@@ -35,13 +29,13 @@ public class MainPage extends BasePage {
         textView.check(matches(withText("Mobile Assignment")));
     }
 
-    //@Step("The app is started/Checking the search field is displayed")
+    @Step("The app is started/Checking the search field is displayed")
     public void checkTheSearchField() {
 
         elementIsDisplayed(SEARCH_FIELD);
     }
 
-    //@Step("The app is started/Checking that search field is empty and clickable")
+    @Step("The app is started/Checking that search field is empty and clickable")
     public void checkEmptyInputField() {
 
         onView(withId(R.id.search)).check(matches(allOf(
@@ -52,7 +46,7 @@ public class MainPage extends BasePage {
         )));
     }
 
-    //@Step("The app is started/Checking the Cities list")
+    @Step("The app is started/Checking the Cities list")
     public void checkTheCitiesList() {
 
         elementIsDisplayed(CITIES_LIST);

@@ -18,6 +18,7 @@ buildscript {
 apply plugin: "io.qameta.allure"
 
 
+
 allure {
     version = '2.18.1'
     autoconfigure = true

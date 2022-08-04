@@ -10,7 +10,8 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
+        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -25,28 +26,33 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:24.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.3'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
-    testImplementation "org.mockito:mockito-core:2.1.0"
-    testImplementation "org.robolectric:robolectric:4.4"
+    testImplementation 'org.mockito:mockito-core:4.6.1'
+    testImplementation "org.robolectric:robolectric:4.8"
 
     // JUnit5
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
 
     // Allure
-    testImplementation 'org.aspectj:aspectjweaver:1.9.5'
+    /*testImplementation 'org.aspectj:aspectjweaver:1.9.9.1'
     testRuntimeOnly "io.qameta.allure:allure-junit5:2.18.1"
     testImplementation 'io.qameta.allure:allure-commandline:2.18.1'
     testImplementation "io.qameta.allure:allure-java-commons:2.18.1"
     testImplementation "io.qameta.allure:allure-attachments:2.18.1"
     testImplementation "io.qameta.allure:allure-generator:2.18.1"
     testImplementation "io.qameta.allure:allure-httpclient:2.18.1"
-    testImplementation 'io.qameta.allure:allure-assertj:2.18.1'
+    testImplementation 'io.qameta.allure:allure-assertj:2.18.1'*/
+
+    androidTestImplementation "io.qameta.allure:allure-kotlin-model:2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-android:2.4.0"
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
     androidTestImplementation 'androidx.test:runner:1.4.0'
