@@ -10,8 +10,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
-        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
-        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -35,24 +34,9 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:4.6.1'
     testImplementation "org.robolectric:robolectric:4.8"
 
-    // JUnit5
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    androidTestImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-
-    // Allure
-    /*testImplementation 'org.aspectj:aspectjweaver:1.9.9.1'
-    testRuntimeOnly "io.qameta.allure:allure-junit5:2.18.1"
-    testImplementation 'io.qameta.allure:allure-commandline:2.18.1'
-    testImplementation "io.qameta.allure:allure-java-commons:2.18.1"
-    testImplementation "io.qameta.allure:allure-attachments:2.18.1"
-    testImplementation "io.qameta.allure:allure-generator:2.18.1"
-    testImplementation "io.qameta.allure:allure-httpclient:2.18.1"
-    testImplementation 'io.qameta.allure:allure-assertj:2.18.1'*/
-
-    androidTestImplementation "io.qameta.allure:allure-kotlin-model:2.4.0"
-    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:2.4.0"
-    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:2.4.0"
-    androidTestImplementation "io.qameta.allure:allure-kotlin-android:2.4.0"
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
     androidTestImplementation 'androidx.test:runner:1.4.0'
