@@ -16,6 +16,10 @@ Automated tests for a simple native Android application that shows a list of cit
 
 ![Screenshot_2](https://user-images.githubusercontent.com/83962883/181755502-654bf2ab-02c8-4d2a-a031-be586b768e37.png)
 
+-Run through console
+
+'./gradlew connectedCheck'
+
 - Run Test Classes (CityListTest and MainActivityTest) which are located in androidTest folder by Run button.
 
 ![Screenshot_1](https://user-images.githubusercontent.com/83962883/181752545-ba2ac052-d86d-4553-8f5b-b3caac731feb.png)
