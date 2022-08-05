@@ -6,7 +6,7 @@ import androidx.test.filters.LargeTest;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
-import static app.com.mobileassignment.views.pages.TestData.*;
+import static app.com.mobileassignment.views.testData.TestData.*;
 
 
 @LargeTest

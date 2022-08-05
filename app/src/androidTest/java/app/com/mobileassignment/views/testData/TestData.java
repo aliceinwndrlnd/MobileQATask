@@ -1,4 +1,4 @@
-package app.com.mobileassignment.views.pages;
+package app.com.mobileassignment.views.testData;
 
 public class TestData {
 
