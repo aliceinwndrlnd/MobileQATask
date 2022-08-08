@@ -5,8 +5,8 @@ public class TestData {
     private static final String cityHoeksken = "'t Hoeksken, BE";
     private static final String cityCaniza = "A Cañiza, ES";
     private static final String cityName1ForTest = "'t Hoeksken";
-    private static final String cityName2ForTest = "Hoeksken";
-    private static final String cityName3ForTest = "A Caniza";
+    private static final String cityName2ForTest = "t Hoeksken, BE";
+    private static final String cityName3ForTest = "A Caniza, ES";
     private static final String symbols = "#$%^&*((*&^%$#@$%^&*()(*&^%$#$%^&*()P)(*&^%$%^&*(";
 
     public static String getCityHoeksken() {

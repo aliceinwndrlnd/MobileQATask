@@ -1,24 +1,20 @@
 package app.com.mobileassignment.views.pages;
 
+import androidx.test.espresso.ViewInteraction;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import app.com.mobileassignment.R;
+import app.com.mobileassignment.views.MainActivity;
+import org.junit.Rule;
+
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.action.ViewActions.*;
+import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.matcher.ViewMatchers.*;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.core.AllOf.allOf;
 
-import androidx.test.espresso.ViewInteraction;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
-
-import org.junit.Rule;
-
-import app.com.mobileassignment.R;
-import app.com.mobileassignment.views.MainActivity;
 
 public class BasePage {
 
@@ -37,7 +33,8 @@ public class BasePage {
                 .check(matches(isDisplayed()));
     }
 
-    public static void elementIsDisplayed(ViewInteraction element) {
+    public static void assertThatElementIsDisplayed(ViewInteraction element) {
+
         element.check(matches(isDisplayed()));
     }
 
@@ -45,5 +42,10 @@ public class BasePage {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.search), isDisplayed()));
         appCompatEditText.perform(replaceText(cityName), closeSoftKeyboard());
+    }
+
+    public void assertThatElementDoesNotExist(Integer resourceId) {
+
+        onView(withId(resourceId)).check(doesNotExist());
     }
 }
