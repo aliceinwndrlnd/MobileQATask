@@ -25,7 +25,7 @@ Automated tests for a simple native Android application that shows a list of cit
 ![Screenshot_4](https://user-images.githubusercontent.com/83962883/183089983-a0ea7b1b-c30c-4093-b1d6-9e447e4dce6e.png)
 
 ## Reports
-Reports are located in the Reports folder at the root of the project. 
+Reports are located in the Reports folder at the root of the project. There are TestCases, BugReport and common conclusion.
 
 ![Screenshot_3](https://user-images.githubusercontent.com/83962883/183088973-286ed73d-1822-4ccf-b814-b93071ae1bc7.png)
 
