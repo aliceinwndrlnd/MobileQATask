@@ -18,7 +18,7 @@ Automated tests for a simple native Android application that shows a list of cit
 
 - Run tests through console (terminal) on your IDE or Android Studio by command
 
-> ```   ./gradlew connectedCheck'  ```
+> ```   gradle connectedAndroidTest  ```
 
 - Or you can run Test Class (MainActivityTest) which is located in androidTest folder by Run button.
 
