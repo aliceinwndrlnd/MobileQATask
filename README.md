@@ -29,7 +29,7 @@ Reports are located in the Reports folder at the root of the project. There are 
 
 ![Screenshot_3](https://user-images.githubusercontent.com/83962883/183088973-286ed73d-1822-4ccf-b814-b93071ae1bc7.png)
 
-Also after the tests running Gradle will generate an html test result report which are stored at
+Also after the tests running reports will be generated an html test result report which are stored at
 
 > ```   app/build/reports/androidTests/connected/index.html  ```
 
