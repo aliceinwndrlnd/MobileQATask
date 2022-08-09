@@ -16,9 +16,9 @@ Automated tests for a simple native Android application that shows a list of cit
 
 ![Screenshot_2](https://user-images.githubusercontent.com/83962883/181755502-654bf2ab-02c8-4d2a-a031-be586b768e37.png)
 
-- Run tests through console (terminal) on your IDE or Android Studio by command
+- Run MainActivityTest class through console (terminal) on your IDE or Android Studio by command
 
-> ```   gradle connectedAndroidTest  ```
+> ```   adb shell am instrument -w -r -e debug false -e class 'app.com.mobileassignment.views.tests.MainActivityTest' app.com.mobileassignment.test/androidx.test.runner.AndroidJUnitRunner  ```
 
 - Or you can run Test Class (MainActivityTest) which is located in androidTest folder by Run button.
 
@@ -28,6 +28,10 @@ Automated tests for a simple native Android application that shows a list of cit
 Reports are located in the Reports folder at the root of the project. There are TestCases, BugReport and common conclusion.
 
 ![Screenshot_3](https://user-images.githubusercontent.com/83962883/183088973-286ed73d-1822-4ccf-b814-b93071ae1bc7.png)
+
+Also after the tests running Gradle will generate an html test result report at 
+
+> app/build/reports/androidTests/connected/index.html
 
 
 
