@@ -10,8 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
-        classpath 'com.kncept.junit.reporter:junit-reporter:2.1.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
     }
 }
 

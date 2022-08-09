@@ -14,6 +14,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.core.AllOf.allOf;
+import static app.com.mobileassignment.views.waiter.Waiter.*;
 
 
 public class BasePage {
@@ -23,17 +24,21 @@ public class BasePage {
             new ActivityScenarioRule<>(MainActivity.class);
 
 
-    public static void clickToElement(Integer resourceId) {
+    public void clickToElement(Integer resourceId) {
         int random = (int) (Math.random() * 1000 + 1); //it was a 209557 value (size of city list), but scroll takes a lot of time because of it
         onData(anything()).inAdapterView(withId(resourceId)).atPosition(random).perform(click());
     }
 
-    public static void resultMatches(Integer resourceId, String value) {
+    public void resultMatches(Integer resourceId, String value) {
         onView(allOf(withId(resourceId), withText(value)))
                 .check(matches(isDisplayed()));
     }
 
-    public static void assertThatElementIsDisplayed(ViewInteraction element) {
+    public void waiter(long millis) {
+        onView(isRoot()).perform(waitFor(millis));
+    }
+
+    public void checkThatElementIsDisplayed(ViewInteraction element) {
 
         element.check(matches(isDisplayed()));
     }
