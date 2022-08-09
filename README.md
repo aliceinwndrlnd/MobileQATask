@@ -33,5 +33,8 @@ Also after the tests running Gradle will generate an html test result report whi
 
 > ```   app/build/reports/androidTests/connected/index.html  ```
 
+![Screenshot_5](https://user-images.githubusercontent.com/83962883/183632652-9d4aed91-83d3-4037-8415-3c133dfce026.png)
+
+
 
 
