@@ -1,5 +1,7 @@
 package app.com.mobileassignment.views.tests;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
@@ -7,8 +9,6 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import static app.com.mobileassignment.views.testData.TestData.*;
-
-import app.com.mobileassignment.R;
 
 
 @LargeTest
@@ -59,7 +59,7 @@ public class MainActivityTest extends BaseTest {
     @DisplayName("Checking that Back button's work")
     @Test
     public void checkBackButtonWorksTS006() {
-        mainPage.clickOnAnyCity();
+        mainPage.clickOnCity();
         mainPage.checkThatElementIsDisplayed(mainPage.MAP_POINT);
         mainPage.pressBackButton();
     }
@@ -67,8 +67,9 @@ public class MainActivityTest extends BaseTest {
     @DisplayName("Click on random city and check click was performed")
     @Test
     public void clickOnAnyCityTS007() {
-        mainPage.clickToElement(R.id.citiesList);
+        mainPage.clickOnCity();
         mainPage.checkThatElementIsDisplayed(mainPage.MAP_POINT);
+        mainPage.assertThatElementDoesNotExist(mainPage.CITIES_LIST);
     }
 
     @DisplayName("Checking work of Search by whole City name")
@@ -103,6 +104,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingWithALotOfSymbolsTS011() {
         mainPage
                 .inputData(getSymbols());
+
         mainPage.checkThatElementIsDisplayed(mainPage.CITIES_LIST);
         mainPage.checkThatElementIsDisplayed(mainPage.ACTIONBAR);
     }

@@ -31,13 +31,17 @@ public class MainPage extends BasePage {
     public final ViewInteraction MAP_POINT = onView(withId(R.id.insert_point));
 
 
+    public static int getResultCityName() {
+
+        return R.id.cityName;
+    }
+
     public void checkTheAppsTitleHasACorrectValue() {
         ViewInteraction textView = onView(
                 allOf(withText("Mobile Assignment"),
                         withParent(allOf(withId(androidx.appcompat.R.id.action_bar),
                                 withParent(withId(androidx.appcompat.R.id.action_bar_container))))));
         textView.check(matches(withText("Mobile Assignment")));
-        assertThat(ACTIONBAR).isNotNull();
     }
 
     public void checkEmptyInputField() {
@@ -50,17 +54,12 @@ public class MainPage extends BasePage {
         )));
     }
 
-    public static int getResultCityName() {
-
-        return R.id.cityName;
+    public void clickOnCity() {
+        clickToElement(R.id.citiesList);
     }
 
     public void matchResult(String value) {
-        resultMatches(getResultCityName(), value);
-    }
-
-    public void clickOnAnyCity() {
-        clickToElement(R.id.citiesList);
+        textResultMatches(getResultCityName(), value);
     }
 
     public void pressBackButton() {
@@ -71,6 +70,6 @@ public class MainPage extends BasePage {
         onData(anything()).inAdapterView(withId(R.id.citiesList))
             .atPosition(0)
                 .onChildView(withId(R.id.cityName))
-            .check(matches(withText(containsString(value))));}
-
+            .check(matches(withText(containsString(value))));
+    }
 }

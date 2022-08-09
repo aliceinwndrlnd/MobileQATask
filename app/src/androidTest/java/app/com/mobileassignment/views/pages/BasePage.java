@@ -29,7 +29,7 @@ public class BasePage {
         onData(anything()).inAdapterView(withId(resourceId)).atPosition(random).perform(click());
     }
 
-    public void resultMatches(Integer resourceId, String value) {
+    public void textResultMatches(Integer resourceId, String value) {
         onView(allOf(withId(resourceId), withText(value)))
                 .check(matches(isDisplayed()));
     }
@@ -43,14 +43,16 @@ public class BasePage {
         element.check(matches(isDisplayed()));
     }
 
+    public void assertThatElementDoesNotExist(ViewInteraction element) {
+
+        element.check(doesNotExist());
+    }
+
     public void inputData(String cityName) {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.search), isDisplayed()));
         appCompatEditText.perform(replaceText(cityName), closeSoftKeyboard());
     }
 
-    public void assertThatElementDoesNotExist(Integer resourceId) {
 
-        onView(withId(resourceId)).check(doesNotExist());
-    }
 }
