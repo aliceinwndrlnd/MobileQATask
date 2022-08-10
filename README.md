@@ -5,7 +5,7 @@ Automated tests for a simple native Android application that shows a list of cit
 ## Stack:
 - Java 11
 - Espresso
-- JUnit5
+- JUnit4
 - Gradle
 - PageObject model
 
