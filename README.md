@@ -14,8 +14,8 @@ Automated tests for a simple native Android application that shows a list of cit
 - `app/` - Main application
 - `app/test/` - Unit tests
 - `app/androidTest/` - Instrumentation tests
-- `app/build/reports/androidTests/connected/index.html` - Instrumentation tests
-- `app/build/reports/tests/testDebugUnitTest/index.html` - Instrumentation tests
+- `app/build/reports/androidTests/connected/index.html` - Report for Instrumentational tests
+- `app/build/reports/tests/testDebugUnitTest/index.html` - Report for Unit tests
 - `Reports` - TestCases, BugReport and Common Report
 
 
