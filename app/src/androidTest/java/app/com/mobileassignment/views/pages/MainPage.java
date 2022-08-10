@@ -59,7 +59,7 @@ public class MainPage extends BasePage {
     }
 
     public void matchChildResults(String value) {
-        onView(isRoot()).perform(waitId(getResultCityName(), 2000));
+        onView(isRoot()).perform(waitId(getResultCityName(), 1000));
         onData(anything()).inAdapterView(withId(getCitiesList()))
                 .atPosition(0)
                 .onChildView(withId(getResultCityName()))
@@ -85,7 +85,7 @@ public class MainPage extends BasePage {
     }
 
     public void resultMatches(String value) {
-        onView(isRoot()).perform(waitId(getResultCityName(), 2000));
+        onView(isRoot()).perform(waitId(getResultCityName(), 1000));
         onView(allOf(withId(getResultCityName()), withText(value)))
                 .check(matches(isDisplayed()));
     }
@@ -97,6 +97,7 @@ public class MainPage extends BasePage {
     }
 
     public void assertCountResults(Integer val) {
+        onView(isRoot()).perform(waitId(getResultCityName(), 1000));
         onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
     }
 }

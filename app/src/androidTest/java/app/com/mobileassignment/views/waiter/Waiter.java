@@ -34,9 +34,9 @@ public class Waiter {
 
             @Override
             public void perform(final UiController uiController, final View view) {
-                uiController.loopMainThreadUntilIdle();
+                uiController.loopMainThreadForAtLeast(500);
                 final long startTime = System.currentTimeMillis();
-                final long endTime = startTime + millis;
+                final long endTime = startTime + millis - 500;
                 final Matcher<View> viewMatcher = withId(viewId);
 
                 do {
