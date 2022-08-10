@@ -1,6 +1,8 @@
 package app.com.mobileassignment.views.pages;
 
-import static androidx.test.espresso.Espresso.*;
+import static androidx.test.espresso.Espresso.onData;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
@@ -26,7 +28,6 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.Rule;
 
-import app.com.mobileassignment.R;
 import app.com.mobileassignment.views.MainActivity;
 
 
@@ -72,10 +73,10 @@ public class BasePage {
         element.check(doesNotExist());
     }
 
-    public void inputData(String cityName) {
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.search), isDisplayed()));
-        appCompatEditText.perform(replaceText(cityName), closeSoftKeyboard());
+    public void inputData(Integer resourceID, String cityName) {
+        ViewInteraction elementText = onView(
+                allOf(withId(resourceID), isDisplayed()));
+        elementText.perform(replaceText(cityName), closeSoftKeyboard());
     }
 
     public void pressBackButton() {
@@ -89,11 +90,11 @@ public class BasePage {
                 .check(matches(withText(containsString(value))));
     }
 
-    public void checkTheAppsTitleHasACorrectValue(String text, Integer resourceId, Integer resourseIdChild) {
+    public void checkTheAppsTitleHasACorrectValue(String text, Integer resourceId, Integer resourceIdChild) {
         ViewInteraction textView = onView(
                 allOf(withText(text),
                         withParent(allOf(withId(resourceId),
-                                withParent(withId(resourseIdChild))))));
+                                withParent(withId(resourceIdChild))))));
         textView.check(matches(withText(text)));
     }
 }

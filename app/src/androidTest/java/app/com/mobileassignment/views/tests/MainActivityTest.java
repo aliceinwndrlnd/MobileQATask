@@ -50,7 +50,7 @@ public class MainActivityTest extends BaseTest {
     @DisplayName("Checking work of Search with upper case")
     @Test
     public void searchWithUpperCaseTS004() {
-        mainPage.inputData(getCityAbbotsfordUpperCase());
+        mainPage.inputData(mainPage.getSearch(), getCityAbbotsfordUpperCase());
         mainPage.waiter(1000);
         mainPage.matchChildResults(mainPage.getCitiesList(), mainPage.getResultCityName(), getCityAbbotsford());
     }
@@ -58,7 +58,7 @@ public class MainActivityTest extends BaseTest {
     @DisplayName("Checking work of Search with lower case")
     @Test
     public void searchWithLowerCaseTS005() {
-        mainPage.inputData(getCityAbbotsfordLowerCase());
+        mainPage.inputData(mainPage.getSearch(), getCityAbbotsfordLowerCase());
         mainPage.waiter(1000);
         mainPage.matchChildResults(mainPage.getCitiesList(), mainPage.getResultCityName(), getCityAbbotsford());
     }
@@ -83,7 +83,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void checkSearchingByWholeNameTS008() {
         mainPage
-                .inputData(getCityName1ForTest());
+                .inputData(mainPage.getSearch(), getCityName1ForTest());
         mainPage.waiter(1000);
         mainPage.resultMatches(mainPage.getResultCityName(), getCityHoeksken());
     }
@@ -92,7 +92,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void checkSearchingWithoutSpecialSymbolsTS009() {
         mainPage
-                .inputData(getCityName2ForTest());
+                .inputData(mainPage.getSearch(), getCityName2ForTest());
         mainPage.waiter(1000);
         mainPage.resultMatches(mainPage.getResultCityName(), getCityHoeksken());
     }
@@ -101,7 +101,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void checkSearchResultWithForeignLettersTS010() {
         mainPage
-                .inputData(getCityName3ForTest());
+                .inputData(mainPage.getSearch(), getCityName3ForTest());
         mainPage.waiter(1000);
         mainPage.resultMatches(mainPage.getResultCityName(), getCityCaniza());
     }
@@ -110,7 +110,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void checkSearchingWithALotOfSymbolsTS011() {
         mainPage
-                .inputData(getSymbols());
+                .inputData(mainPage.getSearch(), getSymbols());
 
         mainPage.checkThatElementIsDisplayed(mainPage.getCitiesList());
         mainPage.checkThatElementIsDisplayed(mainPage.getActionBar());
