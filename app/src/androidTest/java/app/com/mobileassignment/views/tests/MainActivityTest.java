@@ -119,4 +119,12 @@ public class MainActivityTest extends BaseTest {
         mainPage.checkThatElementIsDisplayed(mainPage.getCitiesList());
         mainPage.checkThatElementIsDisplayed(mainPage.getActionBar());
     }
+
+    @DisplayName("Count search results")
+    @Test
+    public void countResultsTS012() {
+        mainPage.inputData(getCityAbbotsford());
+        Waiter.waiter(2000);
+        mainPage.assertCountResults(4);
+    }
 }

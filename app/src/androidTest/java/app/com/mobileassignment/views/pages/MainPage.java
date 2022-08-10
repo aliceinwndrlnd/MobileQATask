@@ -12,16 +12,17 @@ import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibilit
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.isEmptyString;
 import static org.hamcrest.core.AllOf.allOf;
 
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.assertion.ViewAssertions;
 import androidx.test.espresso.matcher.ViewMatchers;
 
 import app.com.mobileassignment.R;
+import app.com.mobileassignment.views.matchers.Matchers;
 
 
 public class MainPage extends BasePage {
@@ -39,7 +40,9 @@ public class MainPage extends BasePage {
         return R.id.action_bar_container;
     }
 
-    public int getResultCityName() {return R.id.cityName;}
+    public int getResultCityName() {
+        return R.id.cityName;
+    }
 
     public int getSearch() {
         return R.id.search;
@@ -87,5 +90,9 @@ public class MainPage extends BasePage {
         ViewInteraction elementText = onView(
                 allOf(withId(getSearch()), isDisplayed()));
         elementText.perform(replaceText(cityName), closeSoftKeyboard());
+    }
+
+    public void assertCountResults(Integer val) {
+        onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
     }
 }
