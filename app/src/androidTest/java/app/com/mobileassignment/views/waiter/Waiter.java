@@ -1,5 +1,6 @@
 package app.com.mobileassignment.views.waiter;
 
+import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 
 import android.view.View;
@@ -31,5 +32,10 @@ public class Waiter {
                 uiController.loopMainThreadForAtLeast(millis);
             }
         };
+    }
+
+    public static void waiter(long millis) {
+
+        onView(isRoot()).perform(waitFor(millis));
     }
 }

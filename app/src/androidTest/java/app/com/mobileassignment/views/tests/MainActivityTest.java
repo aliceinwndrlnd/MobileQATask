@@ -19,6 +19,8 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 
+import app.com.mobileassignment.views.waiter.Waiter;
+
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -53,7 +55,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithUpperCaseTS004() {
         mainPage.inputData(mainPage.getSearch(), getCityAbbotsfordUpperCase());
-        mainPage.waiter(1000);
+        Waiter.waiter(1000);
         mainPage.matchChildResults(mainPage.getCitiesList(), mainPage.getResultCityName(), getCityAbbotsford());
     }
 
@@ -61,7 +63,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithLowerCaseTS005() {
         mainPage.inputData(mainPage.getSearch(), getCityAbbotsfordLowerCase());
-        mainPage.waiter(1000);
+        Waiter.waiter(1000);
         mainPage.matchChildResults(mainPage.getCitiesList(), mainPage.getResultCityName(), getCityAbbotsford());
     }
 
@@ -86,7 +88,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingByWholeNameTS008() {
         mainPage
                 .inputData(mainPage.getSearch(), getCityName1ForTest());
-        mainPage.waiter(1000);
+        Waiter.waiter(1000);
         mainPage.resultMatches(mainPage.getResultCityName(), getCityHoeksken());
     }
 
@@ -95,7 +97,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingWithoutSpecialSymbolsTS009() {
         mainPage
                 .inputData(mainPage.getSearch(), getCityName2ForTest());
-        mainPage.waiter(1000);
+        Waiter.waiter(1000);
         mainPage.resultMatches(mainPage.getResultCityName(), getCityHoeksken());
     }
 
@@ -104,7 +106,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchResultWithForeignLettersTS010() {
         mainPage
                 .inputData(mainPage.getSearch(), getCityName3ForTest());
-        mainPage.waiter(1000);
+        Waiter.waiter(1000);
         mainPage.resultMatches(mainPage.getResultCityName(), getCityCaniza());
     }
 

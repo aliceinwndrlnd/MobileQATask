@@ -58,11 +58,6 @@ public class BasePage {
         )));
     }
 
-    public void waiter(long millis) {
-
-        onView(isRoot()).perform(waitFor(millis));
-    }
-
     public void checkThatElementIsDisplayed(Integer resourceId) {
 
         onView(allOf(withId(resourceId), isDisplayed()));
