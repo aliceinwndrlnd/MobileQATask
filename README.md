@@ -16,13 +16,19 @@ Automated tests for a simple native Android application that shows a list of cit
 
 ![Screenshot_2](https://user-images.githubusercontent.com/83962883/181755502-654bf2ab-02c8-4d2a-a031-be586b768e37.png)
 
+## Run UI Tests
 - Run MainActivityTest class through console (terminal) on your IDE or Android Studio by command
 
 > ```   adb shell am instrument -w -r -e debug false -e class 'app.com.mobileassignment.views.tests.MainActivityTest' app.com.mobileassignment.test/androidx.test.runner.AndroidJUnitRunner  ```
 
 - Or you can run Test Class (MainActivityTest) which is located in androidTest folder by Run button.
 
-![Screenshot_4](https://user-images.githubusercontent.com/83962883/183089983-a0ea7b1b-c30c-4093-b1d6-9e447e4dce6e.png)
+![Screenshot_9](https://user-images.githubusercontent.com/83962883/183925927-20398383-9858-4e34-a197-354af2328968.png)
+
+## Run Unit Tests
+- You can run CityAdapterTest class which is located in test folder by Run Button
+
+![Screenshot_10](https://user-images.githubusercontent.com/83962883/183926201-94020549-5466-4c4d-bc7d-6fa1d7269192.png)
 
 ## Reports
 Reports are located in the Reports folder at the root of the project. There are TestCases, BugReport and common conclusion.
@@ -33,7 +39,15 @@ Also after the tests running reports will be generated an html test result repor
 
 > ```   app/build/reports/androidTests/connected/index.html  ```
 
-![Screenshot_5](https://user-images.githubusercontent.com/83962883/183632652-9d4aed91-83d3-4037-8415-3c133dfce026.png)
+and
+
+> ```   app/build/reports/tests/testDebugUnitTest/index.html  ```
+
+You can open index.html files through browser.
+
+![Screenshot_5](https://user-images.githubusercontent.com/83962883/183926689-cda4fcf5-a3f7-4ca9-8a8a-7301168bf1d1.png)
+
+
 
 
 
