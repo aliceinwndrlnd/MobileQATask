@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 
-import app.com.mobileassignment.views.waiter.Waiter;
+import static app.com.mobileassignment.views.waiter.Waiter.waiter;
 
 
 @LargeTest
@@ -55,7 +55,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithUpperCaseTS004() {
         mainPage.inputData(getCityAbbotsfordUpperCase());
-        Waiter.waiter(1000);
+        waiter(1000);
         mainPage.matchChildResults(getCityAbbotsford());
     }
 
@@ -63,7 +63,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithLowerCaseTS005() {
         mainPage.inputData(getCityAbbotsfordLowerCase());
-        Waiter.waiter(1000);
+        waiter(1000);
         mainPage.matchChildResults(getCityAbbotsford());
     }
 
@@ -88,7 +88,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingByWholeNameTS008() {
         mainPage
                 .inputData(getCityName1ForTest());
-        Waiter.waiter(1000);
+        waiter(1000);
         mainPage.resultMatches(getCityHoeksken());
     }
 
@@ -97,7 +97,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingWithoutSpecialSymbolsTS009() {
         mainPage
                 .inputData(getCityName2ForTest());
-        Waiter.waiter(1000);
+        waiter(1000);
         mainPage.resultMatches(getCityHoeksken());
     }
 
@@ -106,7 +106,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchResultWithForeignLettersTS010() {
         mainPage
                 .inputData(getCityName3ForTest());
-        Waiter.waiter(1000);
+        waiter(1000);
         mainPage.resultMatches(getCityCaniza());
     }
 
@@ -124,7 +124,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void countResultsTS012() {
         mainPage.inputData(getCityAbbotsford());
-        Waiter.waiter(2000);
+        waiter(2000);
         mainPage.assertCountResults(4);
     }
 }
