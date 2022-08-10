@@ -2,16 +2,20 @@ package app.com.mobileassignment.views.testData;
 
 public class TestData {
 
+    private static String appsTitle = "Mobile Assignment";
+    private static String cityHoeksken = "'t Hoeksken, BE";
+    private static String cityCaniza = "A Cañiza, ES";
+    private static String cityName1ForTest = "'t Hoeksken";
+    private static String cityName2ForTest = "t Hoeksken, BE";
+    private static String cityName3ForTest = "A Caniza, ES";
+    private static String symbols = "#$%^&*((*&^%$#@$%^&*()(*&^%$#$%^&*()P)(*&^%$%^&*(";
+    private static String cityAbbotsfordUpperCase = "ABBOTSFORD";
+    private static String cityAbbotsfordLowerCase = "abbotsford";
+    private static String cityAbbotsford = "Abbotsford";
 
-    private static final String cityHoeksken = "'t Hoeksken, BE";
-    private static final String cityCaniza = "A Cañiza, ES";
-    private static final String cityName1ForTest = "'t Hoeksken";
-    private static final String cityName2ForTest = "t Hoeksken, BE";
-    private static final String cityName3ForTest = "A Caniza, ES";
-    private static final String symbols = "#$%^&*((*&^%$#@$%^&*()(*&^%$#$%^&*()P)(*&^%$%^&*(";
-    private static final String cityAbbotsfordUpperCase = "ABBOTSFORD";
-    private static final String cityAbbotsfordLowerCase = "abbotsford";
-    private static final String cityAbbotsford = "Abbotsford";
+    public static String getAppsTitle() {
+        return appsTitle;
+    }
 
     public static String getCityHoeksken() {
         return cityHoeksken;
