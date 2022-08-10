@@ -16,6 +16,7 @@ import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.isEmptyString;
 import static org.hamcrest.core.AllOf.allOf;
+import static app.com.mobileassignment.views.waiter.Waiter.*;
 
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.assertion.ViewAssertions;
@@ -94,5 +95,9 @@ public class MainPage extends BasePage {
 
     public void assertCountResults(Integer val) {
         onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
+    }
+
+    public void waitId(){
+        waitForId(getCitiesList(),1000);
     }
 }
