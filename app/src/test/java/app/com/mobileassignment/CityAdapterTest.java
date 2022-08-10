@@ -19,7 +19,6 @@ public class CityAdapterTest extends BaseTest {
     @Test
     public void testFullListTS001() {
         assertEquals(209557, cityList.size());
-
     }
 
     @Test
