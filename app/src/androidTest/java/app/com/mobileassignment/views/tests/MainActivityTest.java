@@ -19,7 +19,8 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 
-import static app.com.mobileassignment.views.waiter.Waiter.waiter;
+import static app.com.mobileassignment.views.waiter.Waiter.waitId;
+//import static app.com.mobileassignment.views.waiter.Waiter.waiter;
 
 
 @LargeTest
@@ -55,7 +56,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithUpperCaseTS004() {
         mainPage.inputData(getCityAbbotsfordUpperCase());
-        waiter(1000);
+        waitId(mainPage.getResultCityName(), 1000);
         mainPage.matchChildResults(getCityAbbotsford());
     }
 
@@ -63,7 +64,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithLowerCaseTS005() {
         mainPage.inputData(getCityAbbotsfordLowerCase());
-        waiter(1000);
+        waitId(mainPage.getResultCityName(), 1000);
         mainPage.matchChildResults(getCityAbbotsford());
     }
 
@@ -88,7 +89,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingByWholeNameTS008() {
         mainPage
                 .inputData(getCityName1ForTest());
-        waiter(1000);
+        waitId(mainPage.getResultCityName(), 1000);
         mainPage.resultMatches(getCityHoeksken());
     }
 
@@ -97,7 +98,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingWithoutSpecialSymbolsTS009() {
         mainPage
                 .inputData(getCityName2ForTest());
-        waiter(1000);
+        waitId(mainPage.getResultCityName(), 1000);
         mainPage.resultMatches(getCityHoeksken());
     }
 
@@ -106,7 +107,7 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchResultWithForeignLettersTS010() {
         mainPage
                 .inputData(getCityName3ForTest());
-        waiter(1000);
+        waitId(mainPage.getResultCityName(), 1000);
         mainPage.resultMatches(getCityCaniza());
     }
 
@@ -124,7 +125,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void countResultsTS012() {
         mainPage.inputData(getCityAbbotsford());
-        waiter(2000);
+        waitId(mainPage.getResultCityName(), 1000);
         mainPage.assertCountResults(4);
     }
 }
