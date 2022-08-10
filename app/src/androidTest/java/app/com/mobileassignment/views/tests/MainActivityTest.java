@@ -53,7 +53,6 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithUpperCaseTS004() {
         mainPage.inputData(getCityAbbotsfordUpperCase());
-        mainPage.waitId();
         mainPage.matchChildResults(getCityAbbotsford());
     }
 
@@ -61,7 +60,6 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void searchWithLowerCaseTS005() {
         mainPage.inputData(getCityAbbotsfordLowerCase());
-        mainPage.waitId();
         mainPage.matchChildResults(getCityAbbotsford());
     }
 
@@ -86,7 +84,6 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingByWholeNameTS008() {
         mainPage
                 .inputData(getCityName1ForTest());
-        mainPage.waitId();
         mainPage.resultMatches(getCityHoeksken());
     }
 
@@ -95,7 +92,6 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchingWithoutSpecialSymbolsTS009() {
         mainPage
                 .inputData(getCityName2ForTest());
-        mainPage.waitId();
         mainPage.resultMatches(getCityHoeksken());
     }
 
@@ -104,7 +100,6 @@ public class MainActivityTest extends BaseTest {
     public void checkSearchResultWithForeignLettersTS010() {
         mainPage
                 .inputData(getCityName3ForTest());
-        mainPage.waitId();
         mainPage.resultMatches(getCityCaniza());
     }
 
@@ -122,7 +117,6 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void countResultsTS012() {
         mainPage.inputData(getCityAbbotsford());
-        mainPage.waitId();
         mainPage.assertCountResults(4);
     }
 }

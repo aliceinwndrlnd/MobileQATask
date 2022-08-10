@@ -8,6 +8,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isFocusable;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
@@ -58,6 +59,7 @@ public class MainPage extends BasePage {
     }
 
     public void matchChildResults(String value) {
+        onView(isRoot()).perform(waitId(getResultCityName(), 2000));
         onData(anything()).inAdapterView(withId(getCitiesList()))
                 .atPosition(0)
                 .onChildView(withId(getResultCityName()))
@@ -83,6 +85,7 @@ public class MainPage extends BasePage {
     }
 
     public void resultMatches(String value) {
+        onView(isRoot()).perform(waitId(getResultCityName(), 2000));
         onView(allOf(withId(getResultCityName()), withText(value)))
                 .check(matches(isDisplayed()));
     }
@@ -95,9 +98,5 @@ public class MainPage extends BasePage {
 
     public void assertCountResults(Integer val) {
         onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
-    }
-
-    public void waitId(){
-        waitForId(getCitiesList(),1000);
     }
 }

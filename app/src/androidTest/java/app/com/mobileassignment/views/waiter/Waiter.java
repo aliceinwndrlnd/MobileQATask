@@ -20,7 +20,7 @@ public class Waiter {
     /**
      * Perform action of waiting for a specific view id.
      */
-    public static ViewAction waitForId(final int viewId, final long millis) {
+    public static ViewAction waitId(final int viewId, final long millis) {
         return new ViewAction() {
             @Override
             public Matcher<View> getConstraints() {
