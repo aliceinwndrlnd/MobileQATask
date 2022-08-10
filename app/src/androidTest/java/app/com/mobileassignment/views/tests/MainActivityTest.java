@@ -1,5 +1,6 @@
 package app.com.mobileassignment.views.tests;
 
+import static com.google.common.truth.Truth.assertThat;
 import static app.com.mobileassignment.views.testData.TestData.getAppsTitle;
 import static app.com.mobileassignment.views.testData.TestData.getCityAbbotsford;
 import static app.com.mobileassignment.views.testData.TestData.getCityAbbotsfordLowerCase;
@@ -44,6 +45,7 @@ public class MainActivityTest extends BaseTest {
     public void cityListIsDisplayedTS003() {
 
         mainPage.checkThatElementIsDisplayed(mainPage.getCitiesList());
+        assertThat(mainPage.getCitiesList()).isNotNull();
     }
 
 
