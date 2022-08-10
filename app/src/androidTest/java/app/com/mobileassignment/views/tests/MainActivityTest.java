@@ -31,7 +31,7 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void appHeaderTestTS001() {
         mainPage.checkThatElementIsDisplayed(mainPage.getActionBar());
-        mainPage.checkTheAppsTitleHasACorrectValue(getAppsTitle(), mainPage.getActionBar(), mainPage.getActionBarContainer());
+        mainPage.checkTheAppsTitleHasACorrectValue(getAppsTitle());
     }
 
     @DisplayName("Checking that after apk's start the search field is visible and empty")
@@ -39,7 +39,7 @@ public class MainActivityTest extends BaseTest {
     public void searchFieldIsDisplayedTS002() {
 
         mainPage.checkThatElementIsDisplayed(mainPage.getSearch());
-        mainPage.checkEmptyInputField(mainPage.getSearch());
+        mainPage.checkEmptyInputField();
     }
 
     @DisplayName("Checking that after apk's start cities list is visible")
@@ -54,17 +54,17 @@ public class MainActivityTest extends BaseTest {
     @DisplayName("Checking work of Search with upper case")
     @Test
     public void searchWithUpperCaseTS004() {
-        mainPage.inputData(mainPage.getSearch(), getCityAbbotsfordUpperCase());
+        mainPage.inputData(getCityAbbotsfordUpperCase());
         Waiter.waiter(1000);
-        mainPage.matchChildResults(mainPage.getCitiesList(), mainPage.getResultCityName(), getCityAbbotsford());
+        mainPage.matchChildResults(getCityAbbotsford());
     }
 
     @DisplayName("Checking work of Search with lower case")
     @Test
     public void searchWithLowerCaseTS005() {
-        mainPage.inputData(mainPage.getSearch(), getCityAbbotsfordLowerCase());
+        mainPage.inputData(getCityAbbotsfordLowerCase());
         Waiter.waiter(1000);
-        mainPage.matchChildResults(mainPage.getCitiesList(), mainPage.getResultCityName(), getCityAbbotsford());
+        mainPage.matchChildResults(getCityAbbotsford());
     }
 
     @DisplayName("Checking that Back button's work")
@@ -87,34 +87,34 @@ public class MainActivityTest extends BaseTest {
     @Test
     public void checkSearchingByWholeNameTS008() {
         mainPage
-                .inputData(mainPage.getSearch(), getCityName1ForTest());
+                .inputData(getCityName1ForTest());
         Waiter.waiter(1000);
-        mainPage.resultMatches(mainPage.getResultCityName(), getCityHoeksken());
+        mainPage.resultMatches(getCityHoeksken());
     }
 
     @DisplayName("Checking work of Search without special symbols")
     @Test
     public void checkSearchingWithoutSpecialSymbolsTS009() {
         mainPage
-                .inputData(mainPage.getSearch(), getCityName2ForTest());
+                .inputData(getCityName2ForTest());
         Waiter.waiter(1000);
-        mainPage.resultMatches(mainPage.getResultCityName(), getCityHoeksken());
+        mainPage.resultMatches(getCityHoeksken());
     }
 
     @DisplayName("Checking work of Search when we input City name which contains letters from foreign alphabet with regular letters")
     @Test
     public void checkSearchResultWithForeignLettersTS010() {
         mainPage
-                .inputData(mainPage.getSearch(), getCityName3ForTest());
+                .inputData(getCityName3ForTest());
         Waiter.waiter(1000);
-        mainPage.resultMatches(mainPage.getResultCityName(), getCityCaniza());
+        mainPage.resultMatches(getCityCaniza());
     }
 
     @DisplayName("Checking that App doesn't crash after input a lot of special symbols")
     @Test
     public void checkSearchingWithALotOfSymbolsTS011() {
         mainPage
-                .inputData(mainPage.getSearch(), getSymbols());
+                .inputData(getSymbols());
 
         mainPage.checkThatElementIsDisplayed(mainPage.getCitiesList());
         mainPage.checkThatElementIsDisplayed(mainPage.getActionBar());
