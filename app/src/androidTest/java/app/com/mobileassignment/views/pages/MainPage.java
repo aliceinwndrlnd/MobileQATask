@@ -97,7 +97,7 @@ public class MainPage extends BasePage {
     }
 
     public void assertCountResults(Integer val) {
-        onView(isRoot()).perform(waitId(getResultCityName(), 1000));
+        onView(isRoot()).perform(waitId(getResultCityName(), 2000));
         onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
     }
 }
