@@ -53,7 +53,7 @@ and
 
 > ```   app/build/reports/tests/testDebugUnitTest/index.html  ```
 
-You can open index.html files through browser.
+You can open index.html files through browser to see the reports.
 
 ![Screenshot_5](https://user-images.githubusercontent.com/83962883/183926689-cda4fcf5-a3f7-4ca9-8a8a-7301168bf1d1.png)
 
