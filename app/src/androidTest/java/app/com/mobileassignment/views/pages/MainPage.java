@@ -100,4 +100,5 @@ public class MainPage extends BasePage {
         onView(isRoot()).perform(waitId(getResultCityName(), 2000));
         onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
     }
+
 }
