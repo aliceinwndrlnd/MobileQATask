@@ -29,6 +29,7 @@ public class BaseTest {
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
+
     @After
     public void tearDown() {
         mActivityScenarioRule.getScenario().close();
