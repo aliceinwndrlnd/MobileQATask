@@ -13,6 +13,7 @@ public class TestData {
     private static String cityAbbotsfordLowerCase = "abbotsford";
     private static String cityAbbotsford = "Abbotsford";
 
+
     public static String getAppsTitle() {
         return appsTitle;
     }
