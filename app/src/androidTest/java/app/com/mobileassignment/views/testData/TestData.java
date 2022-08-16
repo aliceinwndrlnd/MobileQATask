@@ -2,6 +2,8 @@ package app.com.mobileassignment.views.testData;
 
 public class TestData {
 
+
+    private static String packageName = "app.com.mobileassignment";
     private static String appsTitle = "Mobile Assignment";
     private static String cityHoeksken = "'t Hoeksken, BE";
     private static String cityCaniza = "A Cañiza, ES";
@@ -13,6 +15,8 @@ public class TestData {
     private static String cityAbbotsfordLowerCase = "abbotsford";
     private static String cityAbbotsford = "Abbotsford";
 
+
+    public static String getPackageName() {return packageName;}
 
     public static String getAppsTitle() {
         return appsTitle;
