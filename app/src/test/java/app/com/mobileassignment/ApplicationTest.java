@@ -19,7 +19,7 @@ import app.com.mobileassignment.views.adapters.CityAdapter;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest = "src/main/AndroidManifest.xml")
-public class CityAdapterTest extends BaseTest {
+public class ApplicationTest extends BaseTest {
 
 
     @DisplayName("Check City list size")
