@@ -37,7 +37,7 @@ Automated tests for a simple native Android application that shows a list of cit
 path: ```   app/src/androidTest/tests/MainActivityTest  ```
 
 ## Run Unit Tests
-- You can run Test Class <ins>ApplicationTest</ins> which is located in <ins>test folder</ins> by Run Button 
+- You can run Test Class <ins>CityAdapterTest</ins> which is located in <ins>test folder</ins> by Run Button 
 
 path: ```   app/src/test/ApplicationTest  ```
 
