@@ -1,6 +1,10 @@
 package app.com.mobileassignment;
 
 import android.content.Context;
+import android.net.wifi.WifiManager;
+
+import androidx.test.core.app.ApplicationProvider;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.After;
 import org.junit.Before;
@@ -19,6 +23,9 @@ public class BaseTest {
     Context context;
     List<City> cityList;
     JsonMapper jsonMapper;
+    Context appContext;
+    int orientation;
+    WifiManager wifiManager;
 
 
     @Before
@@ -26,6 +33,9 @@ public class BaseTest {
         context = RuntimeEnvironment.getApplication();
         cityList = new ArrayList<>();
         jsonMapper = new JsonMapper();
+        appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        orientation = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getConfiguration().orientation;
+        wifiManager = (WifiManager) ApplicationProvider.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         populateCityList();
     }
 
