@@ -37,9 +37,9 @@ Automated tests for a simple native Android application that shows a list of cit
 path: ```   app/src/androidTest/tests/MainActivityTest  ```
 
 ## Run Unit Tests
-- You can run Test Class <ins>CityAdapterTest</ins> which is located in <ins>test folder</ins> by Run Button 
+- You can run Test Class <ins>ApplicationTest</ins> which is located in <ins>test folder</ins> by Run Button 
 
-path: ```   app/src/test/CityAdapterTest  ```
+path: ```   app/src/test/ApplicationTest  ```
 
 ## Reports
 Reports are located in the Reports folder at the root of the project. There are TestCases, BugReport and Final Report 
