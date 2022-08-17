@@ -2,7 +2,6 @@ package app.com.mobileassignment.views.tests;
 
 
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
