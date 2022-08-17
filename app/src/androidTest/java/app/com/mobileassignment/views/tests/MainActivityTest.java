@@ -15,7 +15,6 @@ import static app.com.mobileassignment.views.testData.TestData.getPackageName;
 import static app.com.mobileassignment.views.testData.TestData.getSymbols;
 
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -133,8 +132,6 @@ public class MainActivityTest extends BaseTest {
     @DisplayName("Check screen orientation")
     @Test
     public void screenOrientationTestTS014() {
-        mainPage.checkScreenOrientation();
-        assertEquals(Configuration.ORIENTATION_PORTRAIT, orientation);
         mActivityScenarioRule.
                 getScenario().onActivity(activity -> activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE));
         mainPage.checkElementsAreDisplayed(mainPage.getActionBar(), mainPage.getSearch(), mainPage.getCitiesList());

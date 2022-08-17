@@ -19,13 +19,9 @@ import static org.hamcrest.Matchers.isEmptyString;
 import static org.hamcrest.core.AllOf.allOf;
 import static app.com.mobileassignment.views.waiter.Waiter.waitId;
 
-import android.content.res.Configuration;
-import android.util.Log;
-
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.assertion.ViewAssertions;
 import androidx.test.espresso.matcher.ViewMatchers;
-import androidx.test.platform.app.InstrumentationRegistry;
 
 import app.com.mobileassignment.R;
 import app.com.mobileassignment.views.matchers.Matchers;
@@ -103,13 +99,6 @@ public class MainPage extends BasePage {
     public void assertCountResults(Integer val) {
         onView(isRoot()).perform(waitId(getResultCityName(), 2000));
         onView(withId(getCitiesList())).check(ViewAssertions.matches(Matchers.withListSize(val)));
-    }
-
-    public void checkScreenOrientation() {
-        if (InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Log.d("Screen's orientation", "ORIENTATION_PORTRAIT");
-        } else
-            Log.d("Screen's orientation", "ORIENTATION_LANDSCAPE");
     }
 
 }
