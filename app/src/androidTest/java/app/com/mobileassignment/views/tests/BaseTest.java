@@ -2,7 +2,9 @@ package app.com.mobileassignment.views.tests;
 
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -22,7 +24,7 @@ public class BaseTest {
 
     protected MainPage mainPage;
     protected Context appContext;
-    protected int orientation;
+    protected ActivityScenario <MainActivity> setOrientation;
 
 
 
@@ -30,7 +32,7 @@ public class BaseTest {
     public void setUp() {
         mainPage = new MainPage();
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        orientation = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getConfiguration().orientation;
+        setOrientation = mActivityScenarioRule.getScenario().onActivity(activity -> activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));
     }
 
     @Rule
