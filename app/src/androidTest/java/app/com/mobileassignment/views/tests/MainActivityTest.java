@@ -1,6 +1,7 @@
 package app.com.mobileassignment.views.tests;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
 import static app.com.mobileassignment.views.testData.TestData.getAppsTitle;
 import static app.com.mobileassignment.views.testData.TestData.getCityAbbotsford;
 import static app.com.mobileassignment.views.testData.TestData.getCityAbbotsfordLowerCase;
@@ -10,7 +11,11 @@ import static app.com.mobileassignment.views.testData.TestData.getCityHoeksken;
 import static app.com.mobileassignment.views.testData.TestData.getCityName1ForTest;
 import static app.com.mobileassignment.views.testData.TestData.getCityName2ForTest;
 import static app.com.mobileassignment.views.testData.TestData.getCityName3ForTest;
+import static app.com.mobileassignment.views.testData.TestData.getPackageName;
 import static app.com.mobileassignment.views.testData.TestData.getSymbols;
+
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -109,8 +114,7 @@ public class MainActivityTest extends BaseTest {
         mainPage
                 .inputData(getSymbols());
 
-        mainPage.checkThatElementIsDisplayed(mainPage.getCitiesList());
-        mainPage.checkThatElementIsDisplayed(mainPage.getActionBar());
+        mainPage.checkElementsAreDisplayed(mainPage.getActionBar(), mainPage.getSearch(), mainPage.getCitiesList());
     }
 
     @DisplayName("Count search results")
@@ -118,5 +122,21 @@ public class MainActivityTest extends BaseTest {
     public void countResultsTS012() {
         mainPage.inputData(getCityAbbotsford());
         mainPage.assertCountResults(4);
+    }
+
+    @DisplayName("Verify app's package name")
+    @Test
+    public void packageNameTestTS013() {
+        assertEquals(getPackageName(), appContext.getPackageName());
+    }
+
+    @DisplayName("Check screen orientation")
+    @Test
+    public void screenOrientationTestTS014() {
+        mainPage.checkScreenOrientation();
+        assertEquals(Configuration.ORIENTATION_PORTRAIT, orientation);
+        mActivityScenarioRule.
+                getScenario().onActivity(activity -> activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE));
+        mainPage.checkElementsAreDisplayed(mainPage.getActionBar(), mainPage.getSearch(), mainPage.getCitiesList());
     }
 }

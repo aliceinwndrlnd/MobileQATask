@@ -6,23 +6,16 @@ import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.core.AllOf.allOf;
 
+import static app.com.mobileassignment.views.waiter.Waiter.waitId;
+
 import androidx.test.espresso.ViewInteraction;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
-
-import org.junit.Rule;
-
-import app.com.mobileassignment.views.MainActivity;
-
 
 public class BasePage {
-
-    @Rule
-    public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
-            new ActivityScenarioRule<>(MainActivity.class);
 
 
     public void clickToElement(Integer resourceId) {
@@ -33,6 +26,13 @@ public class BasePage {
     public void checkThatElementIsDisplayed(Integer resourceId) {
 
         onView(allOf(withId(resourceId), isDisplayed()));
+    }
+
+    public void checkElementsAreDisplayed(Integer firstElement, Integer secondElement, Integer thirdElement) {
+        onView(isRoot()).perform(waitId(thirdElement, 3000));
+        onView(allOf(withId(firstElement), isDisplayed()));
+        onView(allOf(withId(secondElement), isDisplayed()));
+        onView(allOf(withId(thirdElement), isDisplayed()));
     }
 
     public void assertThatElementDoesNotExist(ViewInteraction element) {
